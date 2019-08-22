@@ -1,16 +1,14 @@
 import React from "react";
-import logo from "../../assets/logo.svg";
+import clock from "../../assets/clock.svg";
 import "../../styles/app.css";
-import Footer from "../footer/footer-view";
 import Clock from "../clock/clock";
+import Footer from "../footer/footer-view";
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <div className="App-logo">
-          <Clock />
-        </div>
+        <img src={clock} className="App-logo" alt="logo" />
         <Clock />
       </header>
       <Footer />

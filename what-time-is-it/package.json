@@ -1,7 +1,7 @@
 {
   "author": "Isaac D.",
   "name": "what-time-is-it",
-  "description": "A web app that displays time",
+  "description": "A web app to display time",
   "version": "0.1.0",
   "license": "SEE LICENSE IN LICENSE.txt",
   "private": false,
