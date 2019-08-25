@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import CircularProgressBar from "../circlularProgressBar/circularProgressBar";
 
 class Clock extends Component {
   constructor(props) {
@@ -19,7 +20,7 @@ class Clock extends Component {
       "November",
       "December"
     ];
-    this.day = [
+    this.dayOfWeek = [
       "Sunday",
       "Monday",
       "Tuesday",
@@ -34,12 +35,12 @@ class Clock extends Component {
     this.timer = setInterval(() => this.setNewTime(), 1000);
   }
   componentWillUnmount() {
-    clearInterval(this.timerID);
+    clearInterval(this.timer);
   }
 
   showDate() {
     const { dateObj } = this.state;
-    let day = this.day[dateObj.getDay()];
+    let day = this.dayOfWeek[dateObj.getDay()];
     let date = dateObj.getDate();
     let month = this.month[dateObj.getMonth()];
     let year = dateObj.getFullYear();
@@ -49,14 +50,19 @@ class Clock extends Component {
 
   setNewTime() {
     this.setState({
-        dateObj: new Date()
+      dateObj: new Date()
     });
   }
 
   render() {
     return (
       <div>
-        <h1>{this.state.dateObj.toLocaleTimeString()}</h1>
+        <CircularProgressBar
+          strokeWidth="7"
+          sqSize="475"
+          currentTime={this.state.dateObj.toLocaleTimeString()}
+          percentage={this.state.dateObj.getSeconds()}
+        />
         <h2>{this.showDate()}</h2>
       </div>
     );
