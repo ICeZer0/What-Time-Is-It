@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import CircularProgressBar from "../circlularProgressBar/circularProgressBar";
+import CircularProgressBar from "../circularProgressBar/circularProgressBar";
 
 class Clock extends Component {
   constructor(props) {
@@ -56,11 +56,13 @@ class Clock extends Component {
 
   render() {
     return (
-      <div>
+      <div className="clock-container">
         <CircularProgressBar
-          strokeWidth="7"
-          sqSize="475"
-          currentTime={this.state.dateObj.toLocaleTimeString()}
+          strokeWidth="5"
+          sqSize="225"
+          offsetTime="60"
+          //regex to parse out seconds
+          currentTime={this.state.dateObj.toLocaleTimeString().replace(/(.*)\D\d+/, '$1')}
           percentage={this.state.dateObj.getSeconds()}
         />
         <h2>{this.showDate()}</h2>

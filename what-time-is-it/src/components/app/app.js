@@ -9,8 +9,6 @@ function App() {
     <div className="App">
       <header className="App-header">
           What Time Is It
-        <img src={clock} className="App-logo" alt="logo" />
-        <button> search </button>
       </header>
       <div className="App-body">
         <Clock />
