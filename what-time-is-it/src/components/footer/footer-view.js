@@ -4,11 +4,13 @@ import "../../styles/app.css";
 const Footer = () => (
   <div className="footer-container">
     <footer className="footer">
-      <span className="footer-copyright">
-        © Copyright 2019
-        <a href="http://linkedin.com/in/isaac-durant">Isaac Durant</a>
-      </span>
-      <span className="footer-note">Development Build | For Demo Purposes Only</span>
+      <div className="footer-copyright">© Copyright 2019</div>
+      <div className="footer-owner">
+        <a href="http://linkedin.com/in/isaac-durant" target="_blank" rel="noopener noreferrer">Isaac Durant</a>
+      </div>
+      <div className="footer-note">
+         | For Demo Purposes Only
+      </div>
     </footer>
   </div>
 );
